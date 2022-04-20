@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class CommercialPremises extends Immovables{
     private String typeRoom;
 
@@ -21,5 +23,12 @@ public class CommercialPremises extends Immovables{
     @Override
     public String getClassName() {
         return "Коммерческие помещения";
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o==null || getClass()!=o.getClass()) return false;
+        CommercialPremises CP = (CommercialPremises) o;
+        return Objects.equals(super.getName(), CP.getName());
     }
 }
